@@ -4,3 +4,5 @@
     <li>[<a title="Follow {{ $author }}" href="http://tumblr.com/follow/{{ $author }}" target="_blank">+</a>] <a href="http://{{ $author }}.tumblr.com" target="_blank">{{ $author }}</a></li>
 @endforeach
 </ul>
+
+<p><a href="/" class="back"><span class="icon">&circlearrowleft;</span> Do again?</a></p>

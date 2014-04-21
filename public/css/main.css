@@ -37,3 +37,22 @@ button {
     font-size: 1em;
     cursor: pointer;
 }
+
+a.back span,
+a.back span {
+    display: inline-block;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+a.back:hover span,
+a.back:focus span {
+    -webkit-transform: rotate(-320deg);
+    -moz-transform: rotate(-320deg);
+    -ms-transform: rotate(-320deg);
+    -o-transform: rotate(-320deg);
+    transform: rotate(-320deg);
+}
