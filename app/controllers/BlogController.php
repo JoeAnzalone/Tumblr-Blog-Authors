@@ -11,7 +11,7 @@ class BlogController extends BaseController {
             'authors' => $authors,
         );
 
-        return View::make('authors', $view_variables);
+        $this->layout->content = View::make('authors.list', $view_variables);
     }
 
     public function getAuthorsJson($blog_name) {
