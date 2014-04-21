@@ -11,5 +11,6 @@
 |
 */
 
+Route::get('/', 'HomeController@showForm');
 Route::get('/{blog}', 'BlogController@getAuthors');
 Route::get('/{blog}/json', 'BlogController@getAuthorsJson');
