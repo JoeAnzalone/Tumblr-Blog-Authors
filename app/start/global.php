@@ -49,6 +49,10 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+	if (!Config::get('app.debug')) {
+		$error_msg = 'Please enter a valid group blog name and try again.';
+		return View::make('layouts.master', array('error' => $error_msg))->nest('content', 'main');
+	}
 });
 
 /*
