@@ -21,6 +21,10 @@ class Blog extends Eloquent {
         $response = $this->client->getBlogPosts($this->blog_name, $options);
         $response->total_posts;
 
+        if (empty($response->posts[0]->post_author)) {
+            return false;
+        }
+
         foreach ($response->posts as $post) {
             $authors[] = $post->post_author;
         }
@@ -35,6 +39,9 @@ class Blog extends Eloquent {
 
         for ($i=0; $i < $pages; $i++) {
             $add_authors = $this->_authorsByOffset($i * $this->postsPerPage);
+            if (!$add_authors) {
+                return false;
+            }
             $authors = array_merge($authors, $add_authors);
         }
 

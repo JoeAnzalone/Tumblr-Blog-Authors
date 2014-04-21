@@ -56,3 +56,13 @@ a.back:focus span {
     -o-transform: rotate(-320deg);
     transform: rotate(-320deg);
 }
+
+.error {
+    background: #d95e40;
+    color: #fff;
+    border: 1px solid #f00;
+    padding: 0.5em;
+    border-radius: 0.15em;
+    font-size: 0.9em;
+    text-align: center;
+}

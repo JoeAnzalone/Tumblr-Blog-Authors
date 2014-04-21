@@ -6,6 +6,12 @@ class BlogController extends BaseController {
         $blog = new Blog($blog_name);
         $authors = $blog->authors();
 
+        if ($authors === false) {
+            $this->layout->error = 'That blog is not a group blog! Please try again with a group blog.';
+            $this->layout->content = View::make('main');
+            return;
+        }
+
         $view_variables = array(
             'blog'    => $blog_name,
             'authors' => $authors,

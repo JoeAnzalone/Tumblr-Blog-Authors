@@ -8,6 +8,9 @@
 </head>
 <body>
 <div class="page-wrap">
+    @if (!empty($error))
+      <div class="error message">{{ $error }}</div>
+    @endif
     {{ $content }}
 </div>
 </body>
