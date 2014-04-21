@@ -12,6 +12,11 @@ class BaseController extends Controller {
 		if ( ! is_null($this->layout))
 		{
 			$this->layout = View::make($this->layout);
+			try {
+				$this->layout->analytics = View::make('analytics');
+			} catch (InvalidArgumentException $e) {
+				$this->layout->analytics = '';
+			}
 		}
 	}
 

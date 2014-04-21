@@ -13,6 +13,7 @@
     @endif
     {{ $content }}
 </div>
+{{ $analytics }}
 </body>
 </html>
 <!--
